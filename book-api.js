@@ -19,6 +19,7 @@ app.post('/book', (req, res) => {
 
     //Output the book to the console for debbugin
     console.log(book);
+    books.push(book);
     res.send('Book is added to the database');
 
 });
