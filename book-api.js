@@ -44,6 +44,21 @@ app.get('/book/:isbn', (req, res) => {
     res.status(404).send('Book not found');
 });
 
+app.delete('/book/:isbn', (req, res) => {
+    // Reading isbn from the URL
+    const isbn = req.params.isbn;
+
+    // Remove item from the books array
+    books = books.filter(i => {
+        if (i.isbn !== isbn) {
+            return true;
+        }
+        return false;
+    });
+
+    res.send('Book is deleted');
+});
+
 app.listen(port, () => console.log(`Running in ${port}!`));
 
 
