@@ -10,7 +10,7 @@ let books = [];
 app.use(cors());
 
 //Configuring body parser middleware 
-app.use(bodyParser.urlencoded({ extend: false}));
+app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 
 app.post('/book', (req, res) => {
